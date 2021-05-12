@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+body .container section.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+body .container section.home div.banner {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #a1a162;
+}
+body .container section.home div.banner h1 {
+  font-size: 3em;
+  margin: 0;
+  font-family: "Mouse Memoirs";
+  letter-spacing: 2px;
+}
+body .container section.home article {
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0;
+  width: 80%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  line-height: 40px;
+  font-size: 1.7em;
+  font-family: "Ropa Sans";
+}
+body .container section.home article h3 {
+  font-size: 2em;
+  font-family: "Mouse Memoirs";
+  letter-spacing: 2px;
+}
+body .container section.home article p {
+  margin: 10px;
+}
+body .container section.home article p span {
+  font-style: italic;
+  font-weight: 600;
+}
+
+/*# sourceMappingURL=home.css.map */

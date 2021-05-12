@@ -1,0 +1,317 @@
+@import "colors";
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(92, 66, 66);
+    width: 100%;
+
+    .container{
+        display: flex;
+        height: 100vh;
+        width: 100%;
+        justify-content: space-between;
+        flex-direction: column;
+        header{
+            position: sticky;
+            position: -webkit-sticky;
+            top: 0px;
+            nav{
+                background-color: black;
+                display: flex;
+                width: 100%;
+                height: 90px;
+                flex-wrap: wrap;
+                justify-content: center;
+
+                ul{
+                    display: flex;
+                    list-style: none;
+                    justify-content: space-evenly;
+                    width: 70%;
+                    margin: 0;
+                    padding: 0;
+                    a{
+                        margin: 20px;
+                        min-width: 100px;
+                        height: 30px;
+                        display: flex;
+                        justify-content: center;
+                        text-decoration: none;
+                        align-items: center;
+                        color: $secondary-color;
+                        padding: 10px 25px;
+                        font-weight: 500;
+                        background: transparent;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        position: relative;
+                        line-height: 42px;
+                        border-left: 2px solid $secondary-color;
+                        border-right: 2px solid $secondary-color;
+                        &:hover {
+                            background: transparent;
+                            box-shadow:none;
+                            border-color: transparent;
+                            box-shadow: inset 8px 0 6px -6px white, inset -8px 0 6px -6px white;
+                            &:before{
+                                width:100%;
+                                height: 2px;
+                                transition:800ms ease all;
+                            }
+                            &::after{
+                                width:100%;
+                                height: 2px;
+                                transition:800ms ease all;
+                            }
+                            li{
+                                color: $secondary-color;
+                            }
+                        }
+                        &:after{
+                            content:'';
+                            position:absolute;
+                            top:0;
+                            right:0;
+                            height:2px;
+                            width:0;
+                            background: linear-gradient(217deg, $secondary-color, $primary-color);
+                            box-shadow:-1px -1px 5px 0px white, 7px 7px 20px 0px rgba(255, 255, 255, 0.2), 4px 4px 5px 0px #0002;
+                            transition:400ms ease all;
+                            right:inherit;
+                            top:inherit;
+                            left:0;
+                            bottom:0;
+                        }
+                        &:before{
+                            content:'';
+                            position:absolute;
+                            top:0;
+                            right:0;
+                            height:2px;
+                            width:0;
+                            background: linear-gradient(217deg, $primary-dark, $secondary-color);
+                            box-shadow:-1px -1px 5px 0px #fff, 7px 7px 20px 0px #0003, 4px 4px 5px 0px #0002;
+                            transition:400ms ease all;
+                        }
+                        li{
+                            text-decoration: none;
+                            color: $secondary-color;
+                            font-size: 1.2em;
+                            font-weight: 520;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+            >div{
+                &.social-media{
+                    background-color: black;
+                    font-family: "Poppins", sans-serif;
+                    display: flex;
+                    border-radius: 10px;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 5%;
+                    min-width: 95px;
+                    position: fixed;
+                    right: 20px;
+                    top: 30%;
+                    z-index: 999;
+                    border: 0.2em solid rgba(255, 255, 255, 0.8);
+                    box-shadow: 0px 0px 10px 2px $secondary-color, inset 0px 0px 10px 2px $secondary-color;
+                    &::after{
+                        background-color: rgb(90, 90, 90);
+                        content: '';
+                        height: 10px;
+                        border-left: 2px solid rgba(255, 255, 255, 0.8);
+                        width: 25px;
+                        position: absolute;
+                        box-shadow: inset 0 -2px 4px 2px white;
+                        bottom: 50px;
+                        left: 100%;
+                        z-index: 2;
+                    }
+                    &::before{
+                        content: '';
+                        background-color: rgb(90, 90, 90);
+                        border-left: 2px solid rgba(255, 255, 255, 0.8);
+                        position: absolute;
+                        box-shadow: inset 0 -2px 4px 2px white;
+                        z-index: 2;
+                        height: 10px;
+                        width: 25px;
+                        top: 50px;
+                        left: 100%;
+                    }
+                    div{
+                        a{
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            margin: 10px;
+                            color: black;
+                            font-size: 2em;
+                            text-decoration: none;
+                        .icon{
+                            position: relative;
+                            border-radius: 50%;
+                            padding: 15px;
+                            margin: 5px;
+                            width: 25px;
+                            height: 25px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            cursor: pointer;
+                            transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                        &:hover{
+                            .tooltip {
+                                top: -45px;
+                                opacity: 1;
+                                visibility: visible;
+                                pointer-events: auto;
+                                text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+                            }
+                            span{
+                                text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+                            }
+                        } 
+                        }
+                        .tooltip {
+                            position: absolute;
+                            top: 0;
+                            font-size: 17px;
+                            background-color: #ffffff;
+                            color: #ffffff;
+                            padding: 5px 8px;
+                            border-radius: 5px;
+                            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+                            opacity: 0;
+                            pointer-events: none;
+                            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                            &:before {
+                                position: absolute;
+                                content: "";
+                                height: 8px;
+                                width: 8px;
+                                background-color: #ffffff;
+                                bottom: -3px;
+                                left: 50%;
+                                transform: translate(-50%) rotate(45deg);
+                                transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                            }
+                        }
+                        .twitter{
+                            background-color: #46c1f6;
+                            box-shadow: 0 0 10px 3px #46c1f6;
+                            color: #ffffff;
+                            &:hover{
+                                .tooltip{
+                                    background-color: #46c1f6;
+                                    color: #ffffff;
+                                    &::before{
+                                        background-color: #46c1f6;
+                                        color: #ffffff;
+                                    }
+                                }
+                            }
+                        }
+                        .facebook{
+                            background-color: #0077B5;
+                            box-shadow: 0 0 10px 3px #0077B5;
+                            color: #ffffff;
+                            &:hover{
+                                .tooltip{
+                                    background-color: #0077B5;
+                                    color: #ffffff;
+                                    &::before{
+                                        background-color: #0077B5;
+                                        color: #ffffff;
+                                    }
+                                }
+                            }
+                        }
+                        .tiktok{
+                            background-color: black;
+                            box-shadow: 0 0 10px 3px white;
+                            color: #ffffff;                            
+                            &:hover{
+                                .tooltip{
+                                    background-color: black;
+                                    color: #ffffff;
+                                    border: 1px solid white;
+ 
+                                    &::before{
+                                        background-color: black;
+                                        border: 1px solid white;
+                                        border-top: none;
+                                        border-left: none;
+                                        color: #ffffff;
+                                    }
+                                }
+                            }
+                        }
+                        .instagram{
+                            background: #f09433;
+                            box-shadow: 0 0 10px 3px #bc1888;
+                            background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+                            background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+                            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+                            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+                            color: #ffffff;
+                            .tooltip{
+                                background: #f09433; 
+                                background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+                                background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+                                background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+                                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+                                color: #ffffff;
+                            &::before{
+                                background: #f09433; 
+                                background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+                                background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+                                background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+                                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+                                color: #ffffff;
+                            }
+                        
+                        }
+                            }
+                                
+                            }
+                        }
+                    
+                }
+            }
+        }
+        footer{
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 50px;
+            div{
+                display: flex;
+                justify-content: space-evenly;
+                width: 80%;
+                a{
+                    text-decoration: none;
+                    color: rgba(255, 255, 255, 0.8);
+                    border-bottom: 1px solid transparent;
+                    &:hover{
+                        border-color: white;
+                    }
+                    
+                }
+
+            }
+        }
+}
+}
