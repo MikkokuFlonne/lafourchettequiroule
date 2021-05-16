@@ -44,13 +44,13 @@ spl_autoload_register(function ($class) {
         <header>
             <nav>
                 <ul>
-                    <a href="">
+                    <a href="menu.php">
                         <li>Menu</li>
                     </a>
                     <a href="">
                         <li>Photos</li>
                     </a>
-                    <a href="">
+                    <a href="./">
                         <li>La Fourchette qui Roule</li>
                     </a>
                     <a href="">

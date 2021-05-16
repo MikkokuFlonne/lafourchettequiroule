@@ -14,7 +14,7 @@ class DB{
     public static function getPdo() {
         // On s'assure que la connexion à la BDD ne se fait qu'une seule fois
         if (self::$pdo === null) {
-            self::$pdo = new PDO('mysql:host=localhost;dbname=kartina;charset=UTF8', 'root', '', [
+            self::$pdo = new PDO('mysql:host=localhost;dbname=fourchette;charset=UTF8', 'root', '', [
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ,
                 PDO::ATTR_EMULATE_PREPARES => false

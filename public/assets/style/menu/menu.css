@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+body .container section.menu {
+  display: flex;
+  background-color: #e4e4d4;
+  justify-content: center;
+  font-family: "Ropa Sans";
+  height: 100%;
+}
+body .container section.menu > div.display-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 90%;
+}
+body .container section.menu > div.display-menu h1 {
+  font-size: 5em;
+  font-family: "Mouse Memoirs";
+  letter-spacing: 4px;
+  font-weight: 600;
+  margin: 20px 0 0 0;
+}
+body .container section.menu > div.display-menu fieldset {
+  width: 100%;
+  padding: 0;
+  margin: 40px;
+  border: 10px double #ff49e0;
+  border-radius: 15px;
+}
+body .container section.menu > div.display-menu fieldset legend {
+  margin-left: 80px;
+  padding: 5px;
+}
+body .container section.menu > div.display-menu fieldset legend h2 {
+  font-size: 3em;
+  font-family: "Mouse Memoirs";
+  margin: 0;
+}
+body .container section.menu > div.display-menu fieldset div {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 40px;
+  justify-content: space-around;
+}
+body .container section.menu > div.display-menu fieldset div h3 {
+  width: 100%;
+  font-family: "Mouse Memoirs";
+  margin: 0;
+  font-size: 1.7em;
+  letter-spacing: 3px;
+}
+body .container section.menu > div.display-menu fieldset div figure {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+  max-width: 25%;
+  min-width: 400px;
+  height: 550px;
+  box-shadow: 15px 15px 0px #56d5ff;
+}
+body .container section.menu > div.display-menu fieldset div figure > div {
+  width: 100%;
+  margin: 0;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .container section.menu > div.display-menu fieldset div figure > div h3 {
+  width: 100%;
+  font-family: "Mouse Memoirs";
+  margin-top: 10px;
+  text-align: center;
+}
+body .container section.menu > div.display-menu fieldset div figure > div img {
+  background-color: yellowgreen;
+  width: 100%;
+  height: 300px;
+  text-align: center;
+}
+body .container section.menu > div.display-menu fieldset div figure figcaption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 40%;
+}
+body .container section.menu > div.display-menu fieldset div figure figcaption ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+body .container section.menu > div.display-menu fieldset div figure figcaption ul li {
+  text-align: center;
+  font-family: "Ropa Sans";
+  margin: 5px 0;
+  font-size: 1.4em;
+}
+body .container section.menu > div.display-menu > div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+body .container section.menu > div.display-menu > div > fieldset {
+  width: 50%;
+  margin: 10px;
+}
+body .container section.menu > div.display-menu > div > fieldset ul {
+  list-style: none;
+}
+body .container section.menu > div.display-menu > div > fieldset ul li {
+  font-family: "Ropa Sans";
+  margin: 5px 0;
+  font-size: 1.4em;
+}
+body .container section.menu > div.display-menu > div div {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body .container section.menu > div.display-menu > div div fieldset {
+  width: 100%;
+  margin: 0px;
+}
+body .container section.menu > div.display-menu > div div fieldset ul {
+  list-style: none;
+}
+body .container section.menu > div.display-menu > div div fieldset ul li {
+  font-family: "Ropa Sans";
+  margin: 5px 0;
+  font-size: 1.4em;
+}
+
+/*# sourceMappingURL=menu.css.map */
