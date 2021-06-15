@@ -3,15 +3,7 @@
 require __DIR__.'/../config/config.php';
 require __DIR__.'/../config/DB.php';
 require __DIR__.'/../config/functions.php';
-
-
-spl_autoload_register(function ($class) {
-
-    $class = str_replace('\\', '/', $class);
-
-    require $class.'.php';
-    
-});
+require_once __DIR__ . '../../../vendor/autoload.php';
 
 ?>
 
@@ -47,16 +39,16 @@ spl_autoload_register(function ($class) {
                     <a href="menu.php">
                         <li>Menu</li>
                     </a>
-                    <a href="">
+                    <a href="gallery.php">
                         <li>Photos</li>
                     </a>
                     <a href="./">
                         <li>La Fourchette qui Roule</li>
                     </a>
-                    <a href="">
+                    <a href="itineraire.php">
                         <li>Itinéraire</li>
                     </a>
-                    <a href="">
+                    <a href="contact.php">
                         <li>Contact</li>
                     </a>
                 </ul>

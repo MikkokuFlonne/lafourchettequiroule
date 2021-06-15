@@ -114,6 +114,7 @@ body{
                         }
                         >div{
                             width: 100%;
+                            margin: 40px;
                             display: flex;
                             flex-direction: row;
                             justify-content: center;
@@ -124,7 +125,6 @@ body{
                                     ul{
                                         list-style: none;
                                         li{
-                                            font-family: 'Ropa Sans';
                                             margin: 5px 0;
                                             font-size: 1.4em;
                                         }
@@ -136,19 +136,19 @@ body{
                                 display: flex;
                                 flex-direction: column;
                                 justify-content: space-between;
+                                align-content: space-between;
                                 fieldset{
                                     width: 100%;
                                     margin: 0px;
                                     ul{
                                         list-style: none;
                                         li{
-                                            font-family: 'Ropa Sans';
                                             margin: 5px 0;
                                             font-size: 1.4em;
                                         }
                                     }
                                 
-                            }
+                                }
 
                             }
                         }

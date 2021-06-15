@@ -6,18 +6,20 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: #5c4242;
+  background-color: #2e2a2a;
   width: 100%;
+  font-family: "Rubik";
 }
 body .container {
   display: flex;
-  width: 100%;
   justify-content: space-between;
   flex-direction: column;
+  width: 100%;
 }
 body .container header {
   position: sticky;
   position: -webkit-sticky;
+  z-index: 100;
   top: 0px;
 }
 body .container header nav {

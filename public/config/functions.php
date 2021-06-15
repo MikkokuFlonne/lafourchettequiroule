@@ -9,3 +9,8 @@ function mb_ucfirst($string, $encoding = 'UTF-8'){
 }
 
 
+function heureFormat($time){
+    $time = date('H:i',strtotime($time));
+    $time = str_replace(':', 'H', $time);
+    return $time;
+}

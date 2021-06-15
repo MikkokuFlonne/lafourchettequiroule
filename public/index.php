@@ -9,10 +9,10 @@ require_once './partials/header.php';
 <section class="home">
 
     <div class="banner">
+        <div>
+            <h1>La Fourchette qui Roule</h1>
 
-        <h1>La Fourchette qui Roule</h1>
-        <!-- <img src="http://www.lafourchettequiroule.com/La_Fourchette_Qui_Roule/WELCOME_files/la%20fourchette%20qui%20roule%20complet.png" alt=""> -->
-
+        </div>
     </div>
 
     <article>
@@ -36,14 +36,72 @@ require_once './partials/header.php';
 
     </article>
 
-    <article>
+    <article class="engagement">
 
         <h3>ENGAGEMENT QUALITÉ</h3>
 
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis tenetur, quod laudantium, sapiente eum voluptatem, rerum harum ea deserunt incidunt repudiandae impedit eveniet officiis minima alias quos dignissimos explicabo commodi.
-        Consequuntur eveniet laboriosam deleniti debitis? Culpa ipsum rem eligendi minus eum. Autem temporibus, quibusdam voluptatem quam excepturi officiis modi est sapiente soluta suscipit nisi deleniti quidem atque nesciunt quos adipisci.
-        Ipsa officiis ipsam doloribus maiores optio, fugiat nemo exercitationem possimus ut ducimus nisi provident vitae, reiciendis neque aperiam suscipit laborum voluptatum tempore incidunt voluptate ex. Ducimus, laudantium. Aspernatur, tempore fuga?
-        Necessitatibus deserunt laborum, ducimus quos debitis porro adipisci labore consectetur cupiditate illo nemo ratione quam exercitationem fugit dolorum aliquam ipsa natus vero eveniet minima, aliquid aut, unde dolores facere. Voluptatum.
+        <div>
+
+            <div>
+                <p>1</p>
+                <h4>Le pain, toujours frais sera !</h4>
+                <p>Chaque jour, le pain est préparé et cuit au four pour vous offrir la meilleur qualité et un burger unique. Ces petits pains maison combleront vos papilles...</p>
+            </div>
+
+            <div>
+                <p>2</p>
+                <h4>Une viande, bien française !</h4>
+                <p>Nos steaks sont 100% pur viande de boeuf charolaise ! Parce qu'on ne rigole pas avec la qualité de la viande !</p>
+            </div>
+
+            <div>
+                <p>3</p>
+                <h4>Du bon fromage de chez nous !</h4>
+                <p>Les fromages que nous utilisons sont certifiés AOP et AOC. Parce qu'ici, on utilise des produits de terroir !</p>
+            </div>
+
+            <div>
+                <p>4</p>
+                <h4>Toujours plus frais !</h4>
+                <p>Nos légumes sont achetés le jour même pour assurer la fraicheur maximale des légumes qui accompagnent votre burger.</p>
+            </div>
+
+            <div>
+                <p>5</p>
+                <h4>Des frites fraîches</h4>
+                <p> Nos pommes frites sont faites maisons ! La fraicheur avant tout !</p>
+            </div>
+
+            <div>
+                <p>6</p>
+                <h4>Toujours le sourire !</h4>
+                <p>Parce qu'on vous accueillera toujours avec le sourire, et que c'est la chose la plus importante ! Un client satisfait, c'est un sourire garanti !</p>
+            </div>
+            
+        </div>
+
+
+    </article>
+
+    <article class="commande">
+        <h3>Envie de commander ?</h3>
+
+        Retrouvez nos partenaires de livraison et commandez sur Uber Eats, Deliveroo ou Just Eat !
+
+
+        <div>
+            <a href="https://www.ubereats.com/fr/toulon-fr/food-delivery/la-fourchette-qui-roule/hK6hblNBR4GaEWG_GIGx2Q">
+                <img src="./assets/svg/uber-eats-logo-0.png" alt="">
+            </a>
+
+            <a href="https://deliveroo.fr/fr/menu/toulon/la-rode/la-fourchette-qui-roule">
+                <img src="./assets/svg/deliveroo-logo.svg" alt="">
+            </a>
+
+            <a href="https://www.just-eat.fr/menu/la-fourchette-qui-roule">
+                <img src="./assets/svg/JustEat_RBG_Full_Color_Vertical.svg" alt="">
+            </a>
+        </div>
 
     </article>
 

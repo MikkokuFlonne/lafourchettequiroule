@@ -1,0 +1,13 @@
+{
+    "name": "felicia/fourchette",
+    "description": "fourchette",
+    "require": {
+        "facebook/graph-sdk": "^5.7"
+    },
+    "autoload": {
+        "classmap": ["public", "admin"]
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^5.3"
+    }
+}

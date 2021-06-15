@@ -103,6 +103,7 @@ body .container section.menu > div.display-menu fieldset div figure figcaption u
 }
 body .container section.menu > div.display-menu > div {
   width: 100%;
+  margin: 40px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -116,7 +117,6 @@ body .container section.menu > div.display-menu > div > fieldset ul {
   list-style: none;
 }
 body .container section.menu > div.display-menu > div > fieldset ul li {
-  font-family: "Ropa Sans";
   margin: 5px 0;
   font-size: 1.4em;
 }
@@ -125,6 +125,7 @@ body .container section.menu > div.display-menu > div div {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-content: space-between;
 }
 body .container section.menu > div.display-menu > div div fieldset {
   width: 100%;
@@ -134,7 +135,6 @@ body .container section.menu > div.display-menu > div div fieldset ul {
   list-style: none;
 }
 body .container section.menu > div.display-menu > div div fieldset ul li {
-  font-family: "Ropa Sans";
   margin: 5px 0;
   font-size: 1.4em;
 }

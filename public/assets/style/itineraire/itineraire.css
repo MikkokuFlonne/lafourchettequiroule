@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+body .container section.itineraire {
+  display: flex;
+  justify-content: center;
+}
+body .container section.itineraire table {
+  margin: 10px;
+  background-color: black;
+  border-spacing: 0;
+  border: 10px solid black;
+}
+body .container section.itineraire table tr {
+  color: black;
+  height: 270px;
+  display: flex;
+}
+body .container section.itineraire table tr:nth-child(1) td {
+  background: linear-gradient(0deg, #00a4cc 0%, #ff49e0 100%);
+}
+body .container section.itineraire table tr:nth-child(2) {
+  justify-content: space-around;
+}
+body .container section.itineraire table tr:nth-child(2) td {
+  background: linear-gradient(0deg, #5f2ac0 0%, #00a4cc 100%);
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+body .container section.itineraire table tr > td {
+  border: 10px solid black;
+  border-radius: 15px;
+  text-align: center;
+  border-spacing: 0;
+  width: 190px;
+}
+body .container section.itineraire table tr > td h1 {
+  font-size: 2em;
+  font-weight: 700;
+}
+body .container section.itineraire table tr > td h3 {
+  font-size: 1.6em;
+  font-weight: 600;
+  text-decoration: underline;
+}
+body .container section.itineraire table tr > td p.heure {
+  color: white;
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
+/*# sourceMappingURL=itineraire.css.map */
