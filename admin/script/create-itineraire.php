@@ -134,8 +134,8 @@ $planning = [
 
 
 
-$create = DB::query('DROP TABLE IF EXISTS planning');
-$create = DB::query('CREATE TABLE IF NOT EXISTS planning (
+DB::postQuery('DROP TABLE IF EXISTS planning');
+DB::postQuery('CREATE TABLE IF NOT EXISTS planning (
                     id int(11) NOT NULL AUTO_INCREMENT,
                     jour varchar(255) NOT NULL,
                     moment tinyint(1) NOT NULL,

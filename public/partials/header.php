@@ -51,6 +51,9 @@ require_once __DIR__ . '../../../vendor/autoload.php';
                     <a href="contact.php">
                         <li>Contact</li>
                     </a>
+                    <a href="abonnement.php">
+                        <li>Abonnement</li>
+                    </a>
                 </ul>
             </nav>
 

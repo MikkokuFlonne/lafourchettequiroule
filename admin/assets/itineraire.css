@@ -1,0 +1,50 @@
+body .container section.planning form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body .container section.planning form table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 3px solid black;
+  width: 90%;
+  height: 700px;
+  text-align: center;
+  margin: 20px 0;
+}
+body .container section.planning form table tr {
+  margin: 10px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid black;
+  height: 70px;
+}
+body .container section.planning form table tr:nth-child(2n) {
+  border-top: 3px solid black;
+}
+body .container section.planning form table tr td {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid black;
+}
+body .container section.planning form table tr td select {
+  height: 40px;
+  width: 80%;
+}
+body .container section.planning form table tr th {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid black;
+}
+body .container section.planning form button {
+  width: 230px;
+  border: none;
+  height: 80px;
+  font-size: 1.3em;
+  border-radius: 15px;
+  color: white;
+  background-color: green;
+}
+
+/*# sourceMappingURL=itineraire.css.map */

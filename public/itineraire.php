@@ -6,13 +6,17 @@ $title = 'Itinéraire';
 require_once './partials/header.php';
 
 
-$midis = DB::query('SELECT * from planning 
+$midis = DB::query('SELECT *, planning.id AS planning_id from planning 
                     INNER JOIN localisation ON localisation.id = planning.localisation_id  
-                    WHERE moment = true');
+                    WHERE moment = false
+                    ORDER BY planning_id');
 
-$soirs = DB::query('SELECT * from planning 
+$soirs = DB::query('SELECT *, planning.id AS planning_id from planning 
                     INNER JOIN localisation ON localisation.id = planning.localisation_id  
-                    WHERE moment = false');
+                    WHERE moment = true 
+                    ORDER BY planning_id');
+
+                    dump($midis);
 
 ?>
 <section class="itineraire">

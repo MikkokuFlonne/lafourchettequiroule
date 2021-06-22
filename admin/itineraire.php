@@ -1,25 +1,82 @@
 <?php
-require_once('../vendor/autoload.php');
 
-$planning = DB::query('SELECT * from planning');
+$style = './assets/itineraire.css';
+$title = 'Update Itinéraire';
 
-dump($planning);
+require_once('./partials/header.php');
 
+$planning = DB::query('SELECT * from planning 
+                       INNER JOIN localisation ON localisation.id = planning.localisation_id ');
+
+$localisations = DB::query(('SELECT * from localisation'));
 
 $jours = $_POST ?? '';
 
 $error = [];
 
-if(!empty($_POST)){
-    dump($_POST);
-    
+if (!empty($_POST)) {
 
 
-    if(!empty($error)){
-        $query = DB::postQuery('UPDATE planning
-                        SET moment = :moment, repos= :repos, ouverture = :ouverture, fermeture = :fermeture, adresse = :adresse, position = :position, localisation = :localisation  
-                        WHERE jour = :jour', $day);
-                        
+    foreach ($jours as $name => $jour) {
+        foreach ($jour as $moment => $infos) {
+            foreach ($infos as $index => $info) {
+
+                if ($index == 'ouverture' || $index == 'fermeture') {
+
+                    if (!strtotime($info)) {
+
+                        $error += [$name => [$moment => [$index => 'L\'heure indiquée n\'est pas valide']]];
+                    }
+                    if(strtotime($infos['ouverture']) >= strtotime($infos['fermeture'])){
+                        $error += [$name => [$moment => [$index => 'Les horaires d\'ouverture et de fermeture indiqués ne correspondent pas']]];
+
+                    }
+                }
+
+                if ($index == 'localisation_id') {
+
+                    $loc = false;
+
+                    foreach ($localisations as $localisation) {
+                        if ($localisation->id == $info) {
+                            $loc = true;
+                        }
+                    }
+                    if ($loc !== true) {
+                        $error += [$name => [$moment => [$index => 'La localisation indiquée n\'est pas valide']]];
+                    }
+                }
+                if ($index == 'repos') {
+                    if (filter_var($info, FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE) === null) {
+                        $error += [$name => [$moment => [$index => 'Le truc indiquée n\'est pas valide']]];
+                    }
+                }
+            }
+        }
+    }
+    dump($error);
+
+    if (empty($error)) {
+
+        foreach ($jours as $name => $jour) {
+            $day = ['jour' => $name];
+            foreach ($jour as $moment => $infos) {
+                if ($moment == 'Midi') {
+                    $day += ['moment' => 0];
+                } else if ($moment == 'Soir') {
+                    $day += ['moment' => 1];
+                }
+                foreach ($infos as $index => $info) {
+                    $info = htmlspecialchars($info);
+                    $day += [$index => $info];
+                }
+            }
+
+            DB::postQuery('UPDATE planning
+                        SET repos= :repos, ouverture = :ouverture, fermeture = :fermeture, localisation_id = :localisation_id  
+                        WHERE jour = :jour AND moment = :moment', $day);
+        }
+        //header('Location: itineraire.php?sucess');
     }
 }
 
@@ -29,67 +86,105 @@ if(!empty($_POST)){
 ?>
 
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin | Update Itinéraire</title>
-</head>
-
-<body>
-
-
+<section class="planning">
     <form action="" method="POST">
 
+        <table>
+            <tr>
+                <th>Jour</th>
+                <th>Période</th>
+                <th>Adresse</th>
+                <th>Ouverture</th>
+                <th>Fermeture</th>
+                <th>Jour travaillé</th>
+            </tr>
+
+            <?php
+            $jour = '';
+            $moment = '';
+            foreach ($planning as $day) {
+            ?>
+
+                <tr>
+                    <?php if ($day->jour != $jour) {
+
+                        $jour = $day->jour;
+                        echo '<td rowspan="2">' . $jour . '</td>';
+                    }
+
+                    if ($day->moment == 0) {
+                        $moment = 'Midi';
+                    } else {
+                        $moment = 'Soir';
+                    }
+                    ?>
+
+                    <td><?= $moment ?></td>
+                    <td><select name="<?= $jour . '[' . $moment . ']' ?>[localisation_id]" id="">
+                            <?php
+                            foreach ($localisations as $localisation) { ?>
+                                <option value="<?= $localisation->id ?>" <?php if ($day->localisation_id == $localisation->id) {
+                                                                                echo 'selected';
+                                                                            }
+                                                                            ?>><?= $localisation->adresse ?></option>
+                            <?php }
+                            ?>
+                        </select>
+                        <?php if (isset($error[$jour][$moment]['localisation_id'])) {
+                            echo '<p>' . $error[$jour][$moment]['localisation_id'] . '</p>';
+                        } ?>
+                    </td>
+                    <td> <input type="datetime" name="<?= $jour . '[' . $moment . ']' ?>[ouverture]" id="ouverture" value="<?php
+                                                                                                                            if (!empty($_POST)) {
+                                                                                                                                echo $_POST[$jour][$moment]['ouverture'];
+                                                                                                                            } else {
+                                                                                                                                echo date('H:i', strtotime($day->ouverture));
+                                                                                                                            } ?>">
+                        <?php if (isset($error[$jour][$moment]['ouverture'])) {
+                            echo '<p>' . $error[$jour][$moment]['ouverture'] . '</p>';
+                        } ?>
+                    </td>
+                    <td> <input type="datetime" name="<?= $jour . '[' . $moment . ']' ?>[fermeture]" id="fermeture" value="<?php
+                                                                                                                            if (!empty($_POST)) {
+                                                                                                                                echo $_POST[$jour][$moment]['fermeture'];
+                                                                                                                            } else {
+                                                                                                                                echo date('H:i', strtotime($day->fermeture));
+                                                                                                                            } ?>">
+                        <?php if (isset($error[$jour][$moment]['fermeture'])) {
+                            echo '<p>' . $error[$jour][$moment]['fermeture'] . '</p>';
+                        } ?>
+                    </td>
+                    <td>
+                        <label for="<?= $jour . '[' . $moment . ']' ?>[repos]">Travail</label><input type="radio" name="<?= $jour . '[' . $moment . ']' ?>[repos]" id="" value="0" <?php
+                                                                                                                                                                                    if ($day->repos == 0) {
+                                                                                                                                                                                        echo 'checked';
+                                                                                                                                                                                    } ?>>
+                        <label for="<?= $jour . '[' . $moment . ']' ?>[repos]">Repos</label><input type="radio" name="<?= $jour . '[' . $moment . ']' ?>[repos]" id="" value="1" <?php
+                                                                                                                                                                                    if ($day->repos == 1) {
+                                                                                                                                                                                        echo 'checked';
+                                                                                                                                                                                    } ?>>
+                        <?php if (isset($error[$jour][$moment]['repos'])) {
+                            echo '<p>' . $error[$jour][$moment]['repos'] . '</p>';
+                        } ?>
+                    </td>
+                </tr>
+
+            <?php }
+
+            ?>
+
+        </table>
 
 
-        <fieldset>
-            <legend>Lundi</legend>
-            <h3>Midi</h3>
-            <label for="repos">Repos</label><input type="radio" name="lundi[midi][travail]" id="repos" value=0>
-            <label for="travail">Travail</label><input type="radio" name="lundi[midi][travail]" id="travail" value=1>
-            <label for="start">Heure d'arrivée</label>
-            <input type="time" name="lundi[midi][start]" id="start">
 
-            <label for="end">Heure de fin</label>
-            <input type="time" name="lundi[midi][end]" id="end">
-            <label for="adresse">Adresse</label>
-            <select name="lundi[midi][adresse]" id="adresse">
-                <option value="GhIJFK5H4XqPRUAR61G4HoXDF0A">14, rue Henri Pointcarré</option>
-                <option value="GhIJm8QgsHKPRUAReekmMQjEF0A">49, rue Henri Pointcarré</option>
-            </select>
-            <h3>Soir</h3>
-            <label for="repos">Repos</label><input type="radio" name="lundi[soir][travail]" id="repos" value=0>
-            <label for="travail">Travail</label><input type="radio" name="lundi[soir][travail]" id="travail" value=1>
-            <label for="">Heure d'arrivée</label>
-            <select name="lundi[soir][start]" id="start">
-                <option value="18h">18h</option>
-                <option value="19h">19h</option>
-            </select>
-            <label for="">Heure de fin</label>
-            <select name="lundi[soir][end]" id="end">
-                <option value="21h30">21h30</option>
-                <option value="22h30">22h30</option>
-            </select>
-
-            <label for="adresse">Adresse</label>
-            <select name="lundi[soir][adresse]" id="adresse">
-                <option value="GhIJFK5H4XqPRUAR61G4HoXDF0A">14, rue Henri Pointcarré</option>
-                <option value="GhIJm8QgsHKPRUAReekmMQjEF0A">49, rue Henri Pointcarré</option>
-            </select>
-
-
-
-        </fieldset>
-
-
-
-        <button type="submit">Envoyer</button>
+        <button type="submit">Mettre à jour le planning</button>
     </form>
 
-</body>
+</section>
 
-</html>
+
+
+<?php
+
+require_once './partials/footer.php'
+?>

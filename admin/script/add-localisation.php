@@ -11,7 +11,7 @@ $localisations = [
                 'nom' => 'Eglise Pie X'],
                 [
                 'id' => 2,
-                'adresse' => '40 rue Henri Pointcarré, 83 000 Toulon',
+                'adresse' => '49 rue Henri Pointcarré, 83 000 Toulon',
                 'place_id' => 'GhIJm8QgsHKPRUAReekmMQjEF0A',
                 'nom' => 'Eglise Pie X']
                 ];
