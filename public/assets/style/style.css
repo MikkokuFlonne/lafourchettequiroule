@@ -21,93 +21,8 @@ body .container header {
   position: -webkit-sticky;
   z-index: 100;
   top: 0px;
-}
-body .container header nav {
-  background-color: black;
-  display: flex;
-  width: 100%;
-  height: 90px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-body .container header nav ul {
-  display: flex;
-  list-style: none;
-  justify-content: space-evenly;
-  width: 70%;
-  margin: 0;
-  padding: 0;
-}
-body .container header nav ul a {
-  margin: 20px;
-  min-width: 100px;
-  height: 30px;
   display: flex;
   justify-content: center;
-  text-decoration: none;
-  align-items: center;
-  color: #ff49e0;
-  padding: 10px 25px;
-  font-weight: 500;
-  background: transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  line-height: 42px;
-  border-left: 2px solid #ff49e0;
-  border-right: 2px solid #ff49e0;
-}
-body .container header nav ul a:hover {
-  background: transparent;
-  box-shadow: none;
-  border-color: transparent;
-  box-shadow: inset 8px 0 6px -6px white, inset -8px 0 6px -6px white;
-}
-body .container header nav ul a:hover:before {
-  width: 100%;
-  height: 2px;
-  transition: 800ms ease all;
-}
-body .container header nav ul a:hover::after {
-  width: 100%;
-  height: 2px;
-  transition: 800ms ease all;
-}
-body .container header nav ul a:hover li {
-  color: #ff49e0;
-}
-body .container header nav ul a:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 2px;
-  width: 0;
-  background: linear-gradient(217deg, #ff49e0, #56d5ff);
-  box-shadow: -1px -1px 5px 0px white, 7px 7px 20px 0px rgba(255, 255, 255, 0.2), 4px 4px 5px 0px #0002;
-  transition: 400ms ease all;
-  right: inherit;
-  top: inherit;
-  left: 0;
-  bottom: 0;
-}
-body .container header nav ul a:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 2px;
-  width: 0;
-  background: linear-gradient(217deg, #00a4cc, #ff49e0);
-  box-shadow: -1px -1px 5px 0px #fff, 7px 7px 20px 0px #0003, 4px 4px 5px 0px #0002;
-  transition: 400ms ease all;
-}
-body .container header nav ul a li {
-  text-decoration: none;
-  color: #ff49e0;
-  font-size: 1.2em;
-  font-weight: 520;
-  text-align: center;
 }
 body .container header > div.social-media {
   background-color: black;
@@ -274,6 +189,286 @@ body .container header > div.social-media div a .instagram .tooltip::before {
   background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#f09433", endColorstr="#bc1888",GradientType=1 );
   color: #ffffff;
+}
+body .container header > div.main-header {
+  background-color: black;
+  color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+body .container header > div.main-header nav {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 90px;
+  justify-content: center;
+  align-items: flex-start;
+  margin-right: 20px;
+}
+body .container header > div.main-header nav > ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly;
+  width: 70%;
+  margin: 0;
+  padding: 0;
+}
+body .container header > div.main-header nav > ul a {
+  margin: 20px;
+  min-width: 100px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  align-items: center;
+  color: #ff49e0;
+  padding: 10px 25px;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  line-height: 42px;
+  border-left: 2px solid #ff49e0;
+  border-right: 2px solid #ff49e0;
+}
+body .container header > div.main-header nav > ul a:hover {
+  background: transparent;
+  box-shadow: none;
+  border-color: transparent;
+  box-shadow: inset 8px 0 6px -6px white, inset -8px 0 6px -6px white;
+}
+body .container header > div.main-header nav > ul a:hover:before {
+  width: 100%;
+  height: 2px;
+  transition: 800ms ease all;
+}
+body .container header > div.main-header nav > ul a:hover::after {
+  width: 100%;
+  height: 2px;
+  transition: 800ms ease all;
+}
+body .container header > div.main-header nav > ul a:hover li {
+  color: #ff49e0;
+}
+body .container header > div.main-header nav > ul a:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background: linear-gradient(217deg, #ff49e0, #56d5ff);
+  box-shadow: -1px -1px 5px 0px white, 7px 7px 20px 0px rgba(255, 255, 255, 0.2), 4px 4px 5px 0px #0002;
+  transition: 400ms ease all;
+  right: inherit;
+  top: inherit;
+  left: 0;
+  bottom: 0;
+}
+body .container header > div.main-header nav > ul a:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background: linear-gradient(217deg, #00a4cc, #ff49e0);
+  box-shadow: -1px -1px 5px 0px #fff, 7px 7px 20px 0px #0003, 4px 4px 5px 0px #0002;
+  transition: 400ms ease all;
+}
+body .container header > div.main-header nav > ul a li {
+  text-decoration: none;
+  color: #ff49e0;
+  font-size: 1.2em;
+  font-weight: 520;
+  text-align: center;
+}
+body .container header > div.main-header nav div {
+  margin-right: 20px;
+}
+body .container header > div.main-header nav div.popup {
+  color: #56d5ff;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+body .container header > div.main-header nav div.popup span {
+  padding: 10px;
+}
+body .container header > div.main-header nav div.popup span:hover {
+  cursor: pointer;
+  background-color: #56d5ff;
+  font-weight: 700;
+  color: black;
+}
+body .container header > div.main-header nav div.user {
+  position: relative;
+  color: #56d5ff;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+body .container header > div.main-header nav div.user span {
+  cursor: pointer;
+  color: #56d5ff;
+}
+body .container header > div.main-header nav div.user div:nth-child(2) {
+  background-color: black;
+  display: none;
+  flex-direction: column;
+  border: 1px solid #56d5ff;
+  padding: 5px;
+  margin: 0;
+  position: absolute;
+  top: 30px;
+  z-index: 5000;
+  width: 150px;
+}
+body .container header > div.main-header nav div.user div:nth-child(2) ul {
+  padding: 0;
+  margin: 0;
+}
+body .container header > div.main-header nav div.user div:nth-child(2) ul li {
+  list-style: none;
+  padding: 15px 0;
+  text-align: center;
+}
+body .container header > div.main-header nav div.user div:nth-child(2) ul li:nth-child(-n+2) {
+  border-bottom: 1px solid #56d5ff;
+}
+body .container header > div.main-header nav div.user div:nth-child(2) ul li:hover {
+  font-weight: 700;
+  background: linear-gradient(to bottom, black, rgba(255, 255, 255, 0.288));
+}
+body .container header > div.main-header nav div.user div:nth-child(2) ul li a {
+  text-decoration: none;
+  color: #56d5ff;
+}
+body .container header > div.main-header div {
+  margin: 0;
+}
+body .container header > div.main-header div.logo {
+  width: 250px;
+}
+body .container header > div.main-header div.logo a figure img {
+  width: 100%;
+}
+body .container header > div.main-header div.compte ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+body .container header > div.main-header div.compte ul li {
+  margin: 0;
+}
+body .container header > div.compte {
+  background-color: brown;
+  color: #ff49e0;
+  margin: auto;
+  font-family: "Poppins", sans-serif;
+  display: none;
+  border-radius: 15px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  position: absolute;
+  top: 200px;
+  z-index: 999;
+}
+body .container header > div.compte ul {
+  display: inline-flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+body .container header > div.compte ul li {
+  list-style: none;
+  width: 50%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+body .container header > div.compte ul li:nth-child(2) {
+  border-radius: 0px 15px 0px 0px;
+}
+body .container header > div.compte ul li:nth-child(1) {
+  border-radius: 15px 0px 0px 0px;
+}
+body .container header > div.compte div {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 600px;
+}
+body .container header > div.compte div h3 {
+  margin-bottom: 0;
+}
+body .container header > div.compte div form {
+  align-items: center;
+  justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+body .container header > div.compte div form input {
+  height: 25px;
+  width: 200px;
+  font-family: "Poppins";
+}
+body .container header > div.compte div form button {
+  background-color: #00a4cc;
+  border: none;
+  border-radius: 15px;
+  height: 30px;
+  width: 150px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1em;
+}
+body .container header > div.compte div form button:hover {
+  transform: scale(1.1);
+}
+body .container header > div.compte div.connexion {
+  display: flex;
+}
+body .container header > div.compte div.connexion form {
+  height: 300px;
+}
+body .container header > div.compte div.inscription {
+  display: none;
+}
+body .container header > div.compte div.inscription form {
+  height: 600px;
+}
+body .container header > div.compte span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  bottom: 660px;
+  left: 320px;
+  background-color: #00a4cc;
+  height: 40px;
+  width: 40px;
+  color: black;
+  font-size: 1.4em;
+  cursor: pointer;
+}
+body .container header > div.compte span:hover {
+  transform: scale(1.2);
+  font-weight: 700;
+  background-color: #56d5ff;
 }
 body .container footer {
   background-color: black;

@@ -14,3 +14,19 @@ function heureFormat($time){
     $time = str_replace(':', 'H', $time);
     return $time;
 }
+
+function isAdmin() {
+    $user = $_SESSION['user'] ?? false;
+
+    if ($user) {
+        $newUser = DB::query('SELECT * FROM user WHERE id = '.$user->id);
+        $_SESSION['user']= $newUser[0];
+        $user = $_SESSION['user'];
+    }
+
+    if ($user && $user->is_admin == true) {
+        return true;
+    }
+
+    return false; // Le user n'est pas administrateur
+}

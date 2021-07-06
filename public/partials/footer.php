@@ -27,7 +27,7 @@
 
 
 <script src="https://kit.fontawesome.com/bedc8cf35d.js" crossorigin="anonymous"></script>
-
+<script src="../script/dropdown.js" ></script>
 </body>
 
 </html>

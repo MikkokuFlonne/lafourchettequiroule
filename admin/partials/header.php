@@ -1,7 +1,13 @@
 <?php
+
+session_start();
 require_once('../vendor/autoload.php');
 
 require('../public/config/functions.php');
+
+if (!isAdmin()) {
+    require 'partials/403.php';
+}
 
 
 
@@ -35,4 +41,14 @@ require('../public/config/functions.php');
 
         <header>
             <h1>Panneau Admin</h1>
+            <nav>
+                <ul>
+                    <a href="itineraire.php">
+                        <li>Mise à jour Planning</li>
+                    </a>
+                    <a href="ajout-item.php">
+                        <li>Ajouter un nouveau item au menu</li>
+                    </a>
+                </ul>
+            </nav>
         </header>
